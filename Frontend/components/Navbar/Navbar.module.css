@@ -1,0 +1,388 @@
+/* ========================================
+   Navbar.module.css — Fully Responsive
+   Desktop menu shows ONLY at 1200px+
+   ======================================== */
+
+/* ---------- Base Container ---------- */
+.navbarContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: transparent;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scrolled {
+    background-color: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- Main Layout Row ---------- */
+.navbarContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    /* needed so mobile dropdown positions correctly */
+    min-height: 80px;
+}
+
+/* ---------- Logo ---------- */
+.navbarLogo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+}
+
+/* ---------- Desktop Nav (≥ 1200px only) ---------- */
+.desktopNav {
+    display: none;
+    /* hidden by default — shown only at 1200px+ */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 36px;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.desktopNav li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 6px 4px;
+    position: relative;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.desktopNav li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.desktopNav li a:hover::after {
+    width: 100%;
+}
+
+/* ---------- Right Side ---------- */
+.navbarRight {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Cart icon */
+.iconBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.iconBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* WhatsApp / Phone button — hidden on mobile, shown on desktop */
+.contactBtn {
+    display: none;
+    /* hidden by default */
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.contactBtn:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+.phoneIcon {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.phoneText {
+    display: none;
+    /* number text hidden on smaller sizes even when button is visible */
+}
+
+/* ---------- Hamburger ---------- */
+.hamburger {
+    display: flex;
+    /* visible below 1200px */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.hamburgerLine {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+/* Animated X when open */
+.line1Open {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.line2Open {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.line3Open {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------- Mobile Dropdown Menu ---------- */
+.mobileMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 20, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 9998;
+    /* Transition: closed state */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobileMenuOpen {
+    max-height: 600px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobileNavList {
+    list-style: none;
+    margin: 0;
+    padding: 12px 0 20px;
+}
+
+.mobileNavList li a {
+    display: block;
+    padding: 14px 30px;
+    color: #e2e8f0;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.mobileNavList li a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.mobileWhatsapp button {
+    display: block;
+    width: calc(100% - 60px);
+    margin: 16px 30px 0;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 0.5px;
+    transition: opacity 0.3s ease;
+}
+
+.mobileWhatsapp button:hover {
+    opacity: 0.85;
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* --- Tablets & small screens (< 1200px) --- */
+/* Desktop nav hidden, hamburger visible — already default */
+
+/* --- 1200px and above: show desktop nav, hide hamburger --- */
+@media (min-width: 1200px) {
+    .desktopNav {
+        display: flex;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .mobileMenu {
+        display: none !important;
+        /* never show mobile menu on desktop */
+    }
+
+    .contactBtn {
+        display: flex;
+    }
+
+    .phoneText {
+        display: inline;
+    }
+}
+
+/* --- Between 992px–1199px: show contact button (no text, icon only) --- */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .contactBtn {
+        display: flex;
+    }
+
+    .phoneText {
+        display: none;
+        /* icon only, no number text */
+    }
+}
+
+/* --- Tablets 768px–991px --- */
+@media (max-width: 991px) {
+    .navbarContent {
+        padding: 0 30px;
+    }
+
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* --- Mobile 576px–767px --- */
+@media (max-width: 767px) {
+    .navbarContent {
+        padding: 0 20px;
+        min-height: 68px;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .navbarRight {
+        gap: 10px;
+    }
+
+    .iconBtn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        border-radius: 8px;
+    }
+
+    .hamburger {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+    }
+}
+
+/* --- Small Mobile < 400px --- */
+@media (max-width: 399px) {
+    .navbarContent {
+        padding: 0 14px;
+        min-height: 62px;
+    }
+
+    .logo {
+        width: 52px;
+        height: 52px;
+    }
+
+    .iconBtn {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .hamburger {
+        width: 36px;
+        height: 36px;
+    }
+
+    .hamburgerLine {
+        width: 16px;
+    }
+}

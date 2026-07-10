@@ -1,0 +1,162 @@
+
+export const aboutContent = [
+  { type: "h2", text: "Premium Cold Drinks in India – Refreshing Desi Drinks for Every Occasion" },
+  { type: "p", text: "Welcome to JC — your ultimate destination for refreshing <b>cold drinks</b> in India that perfectly combine taste, tradition, and affordability. We bring you a diverse and exciting range of desi drinks, flavored beverages, and refreshing sodas that are crafted to suit every mood, every season, and every occasion." },
+  { type: "p", text: "At JC, we understand that a great beverage is more than just a drink—it's an experience. That's why our collection is inspired by authentic Indian flavors, offering a refreshing alternative to ordinary soft drinks. From spicy and tangy blends to smooth and fruity refreshment, every sip is designed to deliver satisfaction and a memorable taste." },
+  { type: "p", text: "Whether you're searching for <b>cold drinks for summer</b> to beat the heat, looking to conveniently buy cold drinks online, or exploring unique regional flavors that reflect India's rich beverage culture, JC delivers the perfect balance of quality, taste, and value." },
+  { type: "p", text: "Our drinks are not only refreshing but also crafted to match the evolving preferences of modern consumers who seek both flavor and affordability. With a strong focus on quality ingredients, hygienic production, and consistent taste, we ensure that every bottle you choose meets high standards." },
+  { type: "p", text: "From daily refreshment to special occasions, JC is your trusted choice for<b> premium cold drinks</b> in India—bringing you closer to the true taste of desi refreshment with every sip." },
+
+  { type: "h2", text: "Discover the Real Taste of Desi Drinks" },
+  { type: "p", text: "India has always been known for its rich and diverse beverage culture, where regional flavors, traditional recipes, and natural ingredients come together to create truly unique drinking experiences. From the streets to households, <b>desi drinks</b> have been an essential part of everyday life, offering not just refreshment but also a connection to culture and taste." },
+  { type: "p", text: "At JC, we proudly celebrate this heritage by offering authentic desi drinks that reflect true Indian taste preferences. Our beverages are thoughtfully crafted to deliver bold, refreshing flavors that stand out from ordinary soft drinks. From the spicy kick of jeera soda to the tangy punch of masala blends and the sweetness of fruit-based drinks, every product is designed to capture the essence of traditional Indian refreshment." },
+  { type: "p", text: "We focus on creating drinks that feel familiar yet exciting—blending time-tested flavors with modern production standards to ensure quality, consistency, and freshness in every bottle." },
+  { type: "p", text: "With the rising demand for traditional and regional beverages, Indian consumers are increasingly shifting towards flavorful alternatives to regular colas. People today are looking for drinks that offer more than just sweetness—they want character, taste, and authenticity. JC meets this demand by bringing you a range of <b>desi drinks</b> that are not only refreshing but also rooted in India's vibrant beverage culture." },
+
+  { type: "h2", text: "Wide Range of Cold Drinks for Every Taste" },
+  { type: "p", text: "At JC, we understand that every customer has a different taste preference. That's why we offer a carefully curated and diverse selection of cold drinks designed to suit every palate—from bold and spicy to sweet and refreshing. Our range combines traditional Indian flavors with modern beverage innovation, ensuring there's something for everyone." },
+  { type: "ul", items: [
+    "**Jeera Soda** – A timeless desi favorite, known for its bold, spicy flavor and refreshing digestive qualities. Perfect for those who enjoy strong, authentic Indian taste.",
+    "**Masala Soda** – A tangy and zesty drink with a unique blend of spices, offering a refreshing twist that stands out from regular soft drinks.",
+    "**Fruit-Based Cold Drinks** – Delicious and refreshing beverages infused with fruity goodness, ideal for those who prefer a lighter, sweeter taste.",
+    "**Regional Flavored Drinks** – Inspired by local tastes and traditional recipes, these drinks bring the essence of India's diverse beverage culture into every bottle.",
+  ]},
+  { type: "p", text: "Each product in our portfolio is crafted with precision to maintain consistent taste, quality, and freshness. Whether you're looking for everyday refreshment or something unique to serve your customers, JC ensures a satisfying experience with every sip." },
+  { type: "p", text: "Our wide variety of <b>cold drinks </b>makes us a preferred choice for consumers, retailers, and distributors looking for reliable, <b>high-demand beverage</b> options in India." },
+
+  { type: "h2", text: "Cold Drinks for Summer – Beat the Heat Naturally" },
+  { type: "p", text: "**Hot Indian summers demand beverages** that do more than just quench thirst—they need to refresh, energize, and instantly cool you down. At JC, we offer a range of <b>cold drinks </b>for summer that are specially crafted to deliver maximum refreshment even during peak heat. With bold flavors and perfectly balanced taste, our drinks are your go-to choice for staying cool and hydrated throughout the day." },
+  { type: "p", text: "Whether you're at home, at work, or on the move, our beverages provide a quick and satisfying escape from the heat. From spicy and <b>tangy desi drinks </b>to light and fruity refreshment, every bottle is designed to match your summer cravings." },
+  { type: "boldp", text: "<b>Our cold drinks are ideal for:</b>" },
+  { type: "ul", items: [
+    "**Daily hydration and refreshment** – Perfect for keeping you cool during hot afternoons",
+    "**Family gatherings and parties** – A crowd-pleasing choice for every age group",
+    "**Outdoor activities and travel** – Easy to carry and instantly refreshing on the go",
+    "**Restaurants, cafes, and retail stores** – A great addition to menus and shelves",
+  ]},
+  { type: "p", text: "With the growing demand for <b>ready-to-drink beverages</b> in India, convenience and taste have become essential for modern consumers. JC combines both—offering cold drinks that are not only refreshing but also easy to enjoy anytime, anywhere." },
+  { type: "p", text: "Make every summer moment better with JC—your reliable partner for refreshing cold drinks that truly beat the heat." },
+
+  { type: "h2", text: "Affordable Drinks Without Compromising Quality" },
+  { type: "p", text: "At JC, we believe that great taste should never come at a high price. Our mission is to make refreshing, high-quality <b>cold drinks</b> accessible to everyone by offering a range of affordable drinks that deliver both value and satisfaction. Whether you're an individual consumer or a business owner, our beverages are designed to meet your needs without stretching your budget." },
+  { type: "p", text: "We carefully balance cost and quality to ensure that every bottle maintains the same level of freshness, taste, and reliability. By optimizing our production processes and sourcing quality ingredients efficiently, we are able to offer premium beverages at competitive prices." },
+  { type: "boldp", text: "We focus on:" },
+  { type: "ul", items: [
+    "**Cost-effective production** – Streamlined manufacturing processes that help reduce costs without affecting product quality",
+    "**Consistent quality standards** – Strict quality checks to ensure every drink delivers the same great taste",
+    "**Value-driven pricing for mass consumers** – Pricing strategies that make our cold drinks accessible to a wide audience",
+  ]},
+  { type: "p", text: "This approach makes JC a trusted choice for customers looking for <b>affordable drinks</b> as well as for retailers, wholesalers, and distributors aiming to offer high-demand products at competitive margins." },
+  { type: "p", text: "With JC, you don't have to choose between price and quality—you get the best of both in every sip." },
+
+  { type: "h2", text: "Cold Drink Bottle Options for Every Need" },
+  { type: "p", text: "Packaging plays a crucial role in delivering convenience, freshness, and usability in today's fast-moving beverage market. At JC, we offer a wide variety of <b>cold drink bottle </b>options designed to meet the needs of both individual consumers and businesses. Whether you're looking for on-the-go refreshment or bulk supply for commercial use, our packaging solutions are built to deliver maximum convenience and efficiency." },
+  { type: "p", text: "We understand that different occasions require different serving sizes, which is why our bottle options are thoughtfully designed to suit every requirement:" },
+  { type: "ul", items: [
+    "**Small bottles for quick refreshment** – Perfect for individual consumption, travel, and instant thirst relief",
+    "**Medium bottles for daily consumption** – Ideal for regular use at home, offices, or small gatherings",
+    "**Bulk packaging for retailers and distributors** – Suitable for supermarkets, restaurants, and wholesale supply needs",
+  ]},
+  { type: "p", text: "Each cold drink bottle is crafted with durable, high-quality materials to ensure product safety, freshness, and long shelf life. Our packaging is also designed for easy handling, efficient storage, and smooth transportation, making it a reliable choice for supply chains and retail environments." },
+  { type: "p", text: "With JC, you get not just refreshing beverages but also practical and well-designed packaging that enhances the overall drinking experience—from shelf to sip." },
+
+  { type: "h2", text: "Buy Cold Drinks Online with Ease" },
+  { type: "p", text: "Looking to order refreshing beverages from the comfort of your home or office? JC makes it simple and convenient to<b> buy cold drinks online</b> with a seamless and reliable experience. Whether you're stocking up for daily use, planning a gathering, or managing business needs, our easy ordering process ensures you get your favorite drinks without any hassle." },
+  { type: "p", text: "We combine quality, convenience, and speed to deliver a smooth online experience tailored to modern consumers. With just a few clicks, you can explore our wide range of cold drinks and have them delivered directly to your location." },
+  { type: "boldp", text: "Benefits of Ordering from JC:" },
+  { type: "ul", items: [
+    "**Convenient online ordering** – Browse, select, and place your order anytime, anywhere",
+    "**Reliable delivery network** – Timely and secure delivery to ensure your drinks reach you fresh",
+    "**Fresh and quality-assured products** – Every bottle is carefully handled to maintain taste and hygiene",
+    "**Wide product selection** – Choose from a variety of desi drinks, flavored sodas, and refreshing beverages",
+  ]},
+  { type: "p", text: "Our platform is designed to make <b>buying cold drinks online</b> easy, fast, and dependable for both individual customers and businesses." },
+  { type: "p", text: "Enjoy your favorite cold drinks delivered straight to your doorstep with JC—where refreshment meets convenience." },
+
+  { type: "h2", text: "Our Commitment to Quality & Hygiene" },
+  { type: "p", text: "At JC, quality and safety are our top priorities. Every <b>cold drink</b> we produce goes through strict quality checks to ensure it meets high standards of taste, freshness, and hygiene. From sourcing ingredients to final packaging, we follow a carefully monitored process that guarantees consistency in every bottle." },
+  { type: "p", text: "Our production facilities are designed to maintain cleanliness and efficiency, ensuring that every sip you take is safe, refreshing, and enjoyable. This commitment to quality helps us build trust with both customers and business partners across India." },
+
+  { type: "h2", text: "Perfect Cold Drinks for Every Occasion" },
+  { type: "p", text: "No matter the moment, JC has the perfect beverage to match. Our versatile range of cold drinks is suitable for a variety of occasions, making us a preferred choice for both personal and commercial use." },
+  { type: "ul", items: [
+    "**Daily Use** – Stay refreshed throughout the day with your favorite drinks",
+    "**Festivals & Celebrations** – Add flavor to every special moment",
+    "**Parties & Events** – Serve beverages that everyone enjoys",
+    "**Restaurants & Cafes** – Enhance your menu with high-demand drinks",
+  ]},
+  { type: "p", text: "With JC, every occasion becomes more refreshing and enjoyable." },
+
+  { type: "h2", text: "Growing Demand for Desi Cold Drinks in India" },
+  { type: "p", text: "The Indian beverage market is evolving rapidly, with a noticeable shift towards traditional and flavored drinks. Consumers are increasingly choosing<b> desi drinks </b>over regular carbonated beverages, driven by a preference for unique tastes and cultural familiarity." },
+  { type: "p", text: "JC is at the forefront of this trend, offering products that align perfectly with changing consumer preferences. Our focus on Indian flavors and affordable pricing positions us as a strong player in the growing cold drinks market." },
+  { type: "h2", text: "Trusted by Customers & Businesses" },
+  {type: "p", text:"Over time, JC has built a reputation for delivering reliable quality and great taste. Our products are trusted by:"},
+  { type: "ul", items: [
+    "Individual consumers across India",
+    "Retail stores and supermarkets",
+    "Restaurants and food outlets",
+    "Distributors and wholesalers",
+  ]},
+  { type: "p", text: "Our growing network reflects the trust and satisfaction our brand consistently delivers." },
+
+  { type: "h2", text: "Fast & Reliable Supply Chain" },
+  { type: "p", text: "We understand the importance of timely delivery in the beverage industry. JC ensures a smooth and efficient supply chain that supports both small and large-scale orders." },
+  { type: "ul", items: [
+    "Consistent product availability",
+    "Quick dispatch and delivery",
+    "Strong distribution support",
+    "Efficient logistics management",
+  ]},
+  { type: "p", text: "This makes us a dependable partner for businesses looking to scale." },
+
+  { type: "h2", text: "Why Choose JC?" },
+  { type: "p", text: "In a competitive beverage market, choosing the right brand makes all the difference. JC stands out as a trusted name in the <b>cold drinks </b>industry by combining authentic taste, consistent quality, and strong business potential. Whether you're a consumer or a business partner, we are committed to delivering value at every level." },
+
+  { type: "h3", text: "1. Authentic Desi Flavors" },
+  { type: "p", text: "We specialize in crafting beverages that truly reflect Indian taste preferences and traditions. From bold and <b>spicy jeera soda</b> to tangy masala blends and refreshing fruit drinks, our products bring the essence of desi drinks into every bottle. We focus on flavors that connect with people and create a memorable drinking experience." },
+
+  { type: "h3", text: "2. High-Quality Ingredients" },
+  { type: "p", text: "Quality is at the heart of everything we do. Every beverage is carefully formulated using selected ingredients to ensure freshness, safety, and great taste. Our production processes follow strict quality standards, ensuring consistency in every batch and delivering a reliable product you can trust." },
+
+  { type: "h3", text: "3. Strong Market Potential" },
+  { type: "p", text: "The demand for cold drinks in India is growing rapidly, especially for flavored and traditional beverages. Consumers today are actively seeking alternatives to<b> regular soft drinks,</b> creating strong opportunities in the desi drinks segment. JC is well-positioned to meet this demand with a product range that aligns with current market trends." },
+
+  { type: "h3", text: "4. Business Opportunities" },
+  { type: "p", text: "We offer excellent growth opportunities for distributors, retailers, and wholesalers looking to expand in the beverage industry. With high-demand products, competitive pricing, and reliable supply support, partnering with JC allows businesses to scale efficiently and maximize profitability." },
+  { type: "p", text: "With JC, you're not just choosing a beverage—you're choosing quality, tradition, and long-term value." },
+
+  { type: "h2", text: "Partner with JC – Grow Your Beverage Business" },
+  { type: "p", text: "The demand for <b>cold drinks</b> in India is rapidly increasing, especially for unique and regional flavors. From jeera soda to flavored drinks, this segment continues to expand with strong consumer interest." },
+  { type: "boldp", text: "Join JC as a:" },
+  { type: "ul", items: ["Distributor", "Retailer", "Wholesale partner"] },
+  { type: "p", text: "Benefit from high-demand products, strong margins, and reliable supply." },
+
+  { type: "h2", text: "Experience Refreshment Like Never Before" },
+  { type: "p", text: "JC is not just a beverage brand—it's a celebration of taste, culture, and refreshment. Whether you're enjoying a chilled drink on a hot day or serving guests at a gathering, our drinks deliver satisfaction in every sip." },
+  { type: "p", text: "Explore our range of <b>cold drinks,</b> discover authentic <b>desi drinks,</b> and enjoy the perfect balance of taste and affordability." },
+  { type: "boldp", text: "<b>Start your journey with JC today—your trusted choice for refreshing beverages in India.</b>" },
+];
+
+export const faqList = [
+  { q: "What types of cold drinks does JC offer?", a: "JC offers a wide range of cold drinks, including jeera soda, masala soda, fruit-based beverages, and regional-flavored desi drinks." },
+  { q: "Are JC beverages suitable for daily consumption?", a: "Yes, our drinks are designed for daily refreshment with consistent taste and quality." },
+  { q: "What makes JC different from other cold drink brands?", a: "JC focuses on authentic desi flavors, affordable pricing, and high-quality ingredients, making it stand out from regular soft drinks." },
+  { q: "Can I buy cold drinks online from JC?", a: "Yes, you can easily buy cold drinks online through our platform with convenient ordering and delivery options." },
+  { q: "Are your drinks suitable for summer?", a: "Absolutely, our cold drinks for summer are specially crafted to keep you refreshed and hydrated during hot weather." },
+  { q: "Do you offer affordable drinks for bulk purchase?", a: "Yes, we provide cost-effective pricing and bulk packaging options for retailers, wholesalers, and distributors." },
+  { q: "What bottle sizes are available?", a: "We offer small, medium, and bulk cold drink bottle options to suit different needs." },
+  { q: "Are JC beverages made with quality ingredients?", a: "Yes, we use carefully selected ingredients and follow strict quality standards to ensure freshness and safety." },
+  { q: "Do you offer distribution or dealership opportunities?", a: "Yes, JC offers business opportunities for distributors, retailers, and wholesalers across India." },
+  { q: "What are desi drinks?", a: "Desi drinks are traditional Indian beverages known for their unique flavors, such as jeera soda and masala soda." },
+  { q: "Are your drinks suitable for parties and events?", a: "Yes, our beverages are perfect for parties, gatherings, and special occasions." },
+  { q: "How do I contact JC for business inquiries?", a: "You can contact us through our website or customer support for distribution and partnership opportunities." },
+  { q: "Do your drinks contain traditional Indian flavors?", a: "Yes, our products are inspired by authentic Indian taste preferences and regional flavors." },
+  { q: "Are your cold drinks available across India?", a: "We are expanding our distribution network to make our products widely available across India." },
+  { q: "Are your drinks safe and hygienic?", a: "Yes, all our beverages are produced under strict hygiene and safety standards." },
+  { q: "Can retailers stock JC products easily?", a: "Yes, we offer reliable supply and packaging suitable for retail environments." },
+  { q: "Do you offer fruit-based cold drinks?", a: "Yes, we provide a variety of fruit-based cold drinks for a refreshing and lighter taste." },
+  { q: "Why are desi drinks becoming popular in India?", a: "Consumers are increasingly choosing desi drinks for their authentic taste and unique flavors compared to regular sodas." },
+  { q: "Are JC products suitable for restaurants and cafes?", a: "Yes, our beverages are a great addition to restaurant and cafe menus." },
+  { q: "How can I start a business with JC?", a: "You can partner with us as a distributor or retailer by contacting our team for more details." },
+];
