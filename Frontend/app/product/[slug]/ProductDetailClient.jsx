@@ -1,14 +1,14 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import "./productDetail.css";
+import ProductDetailAccordion from "./ProductDetailAccordion";
 
 const API_BASE_URL = "https://api.jcdrink.com";
 const API_URL = `${API_BASE_URL}/api`;
 
-export default function ProductDetailClient({ slug, initialProduct }) {
+export default function ProductDetailClient({ slug, initialProduct, accordionData }) {
   const router = useRouter();
 
   
@@ -419,6 +419,9 @@ export default function ProductDetailClient({ slug, initialProduct }) {
             </div>
           </div>
         </div>
+
+        {/* FAQ / About Accordion */}
+        <ProductDetailAccordion data={accordionData} />
 
       </div>
     </div>

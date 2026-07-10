@@ -221,7 +221,7 @@ export default function AdminPage() {
                     <input
                       className="admin-seo-input"
                       type="text"
-                      maxLength={70}
+                     
                       value={pageTitle}
                       onChange={(e) => setPageTitle(e.target.value)}
                     />
@@ -232,7 +232,7 @@ export default function AdminPage() {
                     <label>Meta Description</label>
                     <textarea
                       className="admin-seo-textarea"
-                      maxLength={160}
+                   
                       value={metaDescription}
                       onChange={(e) => setMetaDescription(e.target.value)}
                     />

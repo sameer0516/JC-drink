@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { $getSelection, $isRangeSelection, $createParagraphNode } from "lexical";
 import { $createQuoteNode } from "@lexical/rich-text";
+import { $patchStyleText, $getSelectionStyleValueForProperty } from "@lexical/selection";
 import {
   MDXEditor,
   toolbarPlugin,
@@ -119,6 +120,102 @@ function QuoteToggle() {
   );
 }
 
+// NEW: # (Hashtag) toggle button — click to style the selected text like a
+// hashtag chip (rounded background + colored bold text). The surrounding
+// block always stays a plain paragraph (<p>), it never becomes a heading.
+function HashtagToggle() {
+  const [activeEditor] = useCellValues(activeEditor$);
+  const [isHashtag, setIsHashtag] = useState(false);
+
+  useEffect(() => {
+    if (!activeEditor) return;
+    return activeEditor.registerUpdateListener(({ editorState }) => {
+      editorState.read(() => {
+        try {
+          const selection = $getSelection();
+          if ($isRangeSelection(selection)) {
+            const bg = $getSelectionStyleValueForProperty(selection, "background-color", "");
+            setIsHashtag(bg === "#f0e4cc");
+          }
+        } catch (err) {
+          
+        }
+      });
+    });
+  }, [activeEditor]);
+
+  const toggleHashtag = () => {
+    if (!activeEditor) return;
+    activeEditor.update(() => {
+      try {
+        const selection = $getSelection();
+        if (!$isRangeSelection(selection)) return;
+
+        // make sure the block itself is a plain paragraph, not a heading/quote
+        const topNode = getTopLevelElement(selection);
+        if (topNode.getType() !== "paragraph") {
+          const newNode = $createParagraphNode();
+          const children = topNode.getChildren();
+          children.forEach((child) => newNode.append(child));
+          topNode.replace(newNode);
+        }
+
+        const currentBg = $getSelectionStyleValueForProperty(selection, "background-color", "");
+        const alreadyHashtag = currentBg === "#f0e4cc";
+
+        $patchStyleText(
+          selection,
+          alreadyHashtag
+            ? {
+                "background-color": null,
+                color: null,
+                padding: null,
+                "border-radius": null,
+                "font-weight": null,
+              }
+            : {
+                "background-color": "#f0e4cc",
+                color: "#a1750f",
+                padding: "2px 8px",
+                "border-radius": "999px",
+                "font-weight": "600",
+              }
+        );
+      } catch (err) {
+        console.error("Hashtag toggle failed:", err);
+      }
+    });
+  };
+
+  return (
+    <button
+      type="button"
+      onMouseDown={(e) => e.preventDefault()}
+      onClick={toggleHashtag}
+      title="Hashtag style"
+      className={isHashtag ? "mdx-hashtag-btn active" : "mdx-hashtag-btn"}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        width: "28px",
+        height: "28px",
+        border: "none",
+        borderRadius: "4px",
+        background: isHashtag ? "#f0e4cc" : "transparent",
+        cursor: "pointer",
+        fontFamily: "inherit",
+        fontWeight: "bold",
+        fontSize: "16px",
+        color: isHashtag ? "#a1750f" : "#555",
+        lineHeight: 1,
+      }}
+    >
+      #
+    </button>
+  );
+}
+
 export default function MDXEditorComponent({
   onChange,
   initialContent = ""
@@ -167,6 +264,7 @@ export default function MDXEditorComponent({
               <StrikeThroughSupSubToggles />
               <Separator />
               <QuoteToggle />
+              <HashtagToggle />
               <Separator />
               <ListsToggle />
               <Separator />

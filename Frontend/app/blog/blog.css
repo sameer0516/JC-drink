@@ -293,12 +293,18 @@
 }
 
 .BlogDetail-content a {
-  color: #e67e00;
+  color: #c9a96e;
   text-decoration: underline;
+  text-decoration-color: #c9a96e;
 }
 
 .BlogDetail-content a:hover {
-  color: #111;
+  color: #b8935a;
+  text-decoration-color: #b8935a;
+}
+
+.BlogDetail-content a:visited {
+  color: #c9a96e;
 }
 
 /* ── Blog Detail Table ── */
