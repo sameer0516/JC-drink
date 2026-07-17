@@ -670,7 +670,7 @@ export default function ProductClient() {
       {/* ── Products Section ── */}
       <div className={styles.productContainer}>
         <div className={styles.productContainerContent}>
-          <h1 className={styles.aboutHeading}>Our Products</h1>
+          <h1 className={styles.aboutHeading}>Refreshing & Affordable Soft Drinks & Energy Drinks Collection</h1>
           <div className={styles.productContainerContentDes}>
             Browse our collection of amazing products.
           </div>

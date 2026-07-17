@@ -63,7 +63,7 @@ function QuoteToggle() {
           if ($isRangeSelection(selection)) {
             setIsQuote(getTopLevelElement(selection).getType() === "quote");
           }
-        } catch (err) {
+        } catch {
           
         }
       });
@@ -120,9 +120,7 @@ function QuoteToggle() {
   );
 }
 
-// NEW: # (Hashtag) toggle button — click to style the selected text like a
-// hashtag chip (rounded background + colored bold text). The surrounding
-// block always stays a plain paragraph (<p>), it never becomes a heading.
+
 function HashtagToggle() {
   const [activeEditor] = useCellValues(activeEditor$);
   const [isHashtag, setIsHashtag] = useState(false);
@@ -137,7 +135,7 @@ function HashtagToggle() {
             const bg = $getSelectionStyleValueForProperty(selection, "background-color", "");
             setIsHashtag(bg === "#f0e4cc");
           }
-        } catch (err) {
+        } catch {
           
         }
       });

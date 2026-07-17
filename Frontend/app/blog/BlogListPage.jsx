@@ -34,7 +34,7 @@ export default function BlogListPage() {
         <div className="container">
           <div className="row">
             <div className="About-title">
-              <h2>Latest Blogs</h2>
+              <h1>JC Drink Blog – Business Tips & Industry Insights</h1>
             </div>
 
             {loading ? (

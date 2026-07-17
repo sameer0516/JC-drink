@@ -5,7 +5,6 @@ import Link from "next/link";
 import "./admin-blog.css";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
-const SITE_URL = "http://localhost:5000"; 
 
 const MDXEditorComponent = dynamic(
   () => import("../../components/Toolbar/MDXEditorComponent"),
@@ -31,12 +30,6 @@ export default function AdminPage() {
   const [metaDescription, setMetaDescription] = useState("");
   const [script, setScript] = useState("");
 
-  useEffect(() => { fetchBlogs(); }, []);
-
-  useEffect(() => {
-    if (!urlHandleEdited) setUrlHandle(toUrlHandle(title));
-  }, [title, urlHandleEdited]);
-
   const fetchBlogs = () => {
     fetch(`${API_URL}/api/blogs`)
       .then((res) => res.json())
@@ -49,6 +42,14 @@ export default function AdminPage() {
         setBlogs([]);
         setLoadingBlogs(false);
       });
+  };
+
+  useEffect(() => { fetchBlogs(); }, []);
+
+  const handleTitleChange = (e) => {
+    const value = e.target.value;
+    setTitle(value);
+    if (!urlHandleEdited) setUrlHandle(toUrlHandle(value));
   };
 
   const handleUrlChange = (e) => {
@@ -136,7 +137,7 @@ export default function AdminPage() {
                 type="text"
                
                 value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                onChange={handleTitleChange}
                 required
               />
             </div>
@@ -207,9 +208,7 @@ export default function AdminPage() {
               >
                 <div className="admin-seo-toggle-left">
                   <span className="admin-seo-title">Search engine listing</span>
-                  <span className="admin-seo-subtitle">
-                    Meta title, description aur script add karo
-                  </span>
+                  
                 </div>
                 <span className="admin-seo-arrow">{seoOpen ? "▲" : "▼"}</span>
               </button>

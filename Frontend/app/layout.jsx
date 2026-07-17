@@ -10,14 +10,53 @@ const merriweather = Merriweather({
   weight: ["300", "400", "700"],
 });
 
+
+const SITE_URL = "https://jcdrink.com";
+const PAGE_URL = "https://jcdrink.com/";
+const OG_IMAGE = "/Just-Drink-Banner.jpg"; 
+const TITLE = "Buy Affordable Cold Drinks Online – Desi Summer Drinks | JC Drink";
+const DESCRIPTION = "Shop refreshing desi drinks and affordable cold drinks online at JC Drink. Explore tasty summer beverages in convenient bottles. Order now!";
+
 export const metadata = {
-  title: "Buy Affordable Cold Drinks Online – Desi Summer Drinks | JC Drink",
-  description: "Shop refreshing desi drinks and affordable cold drinks online at JC Drink. Explore tasty summer beverages in convenient bottles. Order now!",
-  other: {
-    "p:domain_verify": "510a4669eecf2d1739fa4226018c3f18",
-  },
+  title: TITLE,
+  description: DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
+
+  
   alternates: {
-    canonical: "https://jcdrink.com/",
+    canonical: PAGE_URL,
+  },
+
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: PAGE_URL,
+    siteName: "JC Drink",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: OG_IMAGE,
+        alt: TITLE,
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    creator: "@jcdrink",
+    images: [OG_IMAGE],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
 
@@ -26,11 +65,14 @@ export default function RootLayout({ children }) {
     <>
       <html lang="en" suppressHydrationWarning>
         <head>
-          <meta name="p:domain_verify" content="510a4669eecf2d1739fa4226018c3f18" />
-        </head>
-        <body className={merriweather.className} suppressHydrationWarning>
+          <meta
+            name="p:domain_verify"
+            content="510a4669eecf2d1739fa4226018c3f18"
+          />
 
-          {/* GTM Script */}
+      
+
+      
           <Script
             id="gtm-script"
             strategy="afterInteractive"
@@ -62,7 +104,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               `,
             }}
           />
+        </head>
 
+        <body className={merriweather.className} suppressHydrationWarning>
           <Navbar />
 
           {/* GTM noscript */}

@@ -22,6 +22,9 @@ const productSEO = {
 
     canonical:
       "https://jcdrink.com/product/desi-jeera",
+
+    
+    h1: "Refreshing Desi Jeera Drink – Masala Cold Drink for Summer",
   },
 
   "apple-fiizi": {
@@ -33,6 +36,9 @@ const productSEO = {
 
     canonical:
       "https://jcdrink.com/product/apple-fiizi",
+
+    
+    h1: "Apple Fiizi – Healthy & Refreshing Apple Drink in India",
   },
 
   "sweet-lemon": {
@@ -44,6 +50,9 @@ const productSEO = {
 
     canonical:
       "https://jcdrink.com/product/sweet-lemon",
+
+    
+    h1: "Zesty & Refreshing Sweet Lemon Drink Online in India",
   },
 
   "cola-drink": {
@@ -55,6 +64,9 @@ const productSEO = {
 
     canonical:
       "https://jcdrink.com/product/cola-drink",
+
+    
+    h1: "Refreshing Cola Drink – Affordable Cola Cold Drink in India",
   },
 
   "clear-lemon": {
@@ -66,6 +78,9 @@ const productSEO = {
 
     canonical:
       "https://jcdrink.com/product/clear-lemon",
+
+   
+    h1: "Refreshing Clear Lemon Drink – Lemon Soft Drink in India",
   },
 
   "energy-drink": {
@@ -77,6 +92,9 @@ const productSEO = {
 
     canonical:
       "https://jcdrink.com/product/energy-drink",
+
+    
+    h1: "Best Energy Drink in India – Healthy & Instant Boost",
   },
 
   "tangy-orange": {
@@ -88,6 +106,9 @@ const productSEO = {
 
     canonical:
       "https://jcdrink.com/product/tangy-orange",
+
+    
+    h1: "Sip Tangy Orange – Refreshing Orange Drink Online in India",
   },
 };
 
@@ -3231,7 +3252,7 @@ const productAccordionData = {
       },
       {
         q: "Why should I choose JC Tangy Orange Drink?",
-        a: "It combines refreshing taste, convenience, value pricing, and reliable quality, making it a dependable beverage choice.",
+        a: "It combines refreshing taste, convenience, value pricing, and reliable quality, making a dependable beverage choice.",
       },
     ],
   },
@@ -3440,11 +3461,16 @@ export default async function Page({
 
   const accordionData = productAccordionData[slug] || defaultAccordionData;
 
+  // ✅ H1 heading resolved from SEO data (falls back to product title)
+  const seo = productSEO[slug];
+  const h1Heading = seo?.h1 || initialProduct.title;
+
   return (
     <ProductDetailClient
       slug={slug}
       initialProduct={initialProduct}
       accordionData={accordionData}
+      h1Heading={h1Heading}
     />
   );
 }

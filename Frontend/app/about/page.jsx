@@ -1,23 +1,111 @@
+import Script from "next/script";
 import "./about.css";
 
+const SITE_URL = "https://jcdrink.com";
+const PAGE_URL = "https://jcdrink.com/about";
+const OG_IMAGE = "/Just-Drink-Banner.jpg"; 
+const TITLE = "About JC Drink | Beverage Brand & Distributorship Opportunity India";
+const DESCRIPTION =
+    "Learn about JC Drink, our mission, vision, and growing beverage brand in India. Discover how we support distributors with high-demand desi drinks.";
+
 export const metadata = {
-    title: "About Us JC Drink – Our Journey",
-    description:
-        "Learn about JC Drink, our journey, mission, and commitment to crafting high-quality cold drinks and refreshing beverages made with pure ingredients and great taste.",
+    title: TITLE,
+    description: DESCRIPTION,
+
     alternates: {
-        canonical: "https://jcdrink.com/about",
+        canonical: PAGE_URL,
+    },
+    openGraph: {
+        title: TITLE,
+        description: DESCRIPTION,
+        url: PAGE_URL,
+        siteName: "JC Drink",
+        type: "website",
+        locale: "en_US",
+        images: [
+            {
+                url: OG_IMAGE,
+                alt: TITLE,
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: TITLE,
+        description: DESCRIPTION,
+        creator: "@jcdrink",
+        images: [
+            {
+                url: OG_IMAGE,
+                alt: TITLE,
+            },
+        ],
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+        },
     },
 };
+
+const schemaData = [
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "@id": `${PAGE_URL}#webpage`,
+        url: PAGE_URL,
+        name: TITLE,
+        description: DESCRIPTION,
+        isPartOf: {
+            "@id": `${SITE_URL}/#website`, // TODO: home page ke WebSite schema ke "@id" se match hona chahiye
+        },
+        about: {
+            "@id": `${SITE_URL}/#organization`, // TODO: home page ke Organization schema ke "@id" se match hona chahiye
+        },
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": `${PAGE_URL}#breadcrumb`,
+        itemListElement: [
+            {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: `${SITE_URL}/`,
+            },
+            {
+                "@type": "ListItem",
+                position: 2,
+                name: "About",
+                item: PAGE_URL,
+            },
+        ],
+    },
+];
 
 export default function About() {
     return (
         <div className="about">
+            {/* Dynamic JSON-LD schema rendering */}
+            {schemaData.map((schema, index) => (
+                <Script
+                    key={schema["@id"] || index}
+                    id={`schema-${schema["@type"]}-${index}`}
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+                />
+            ))}
+
             <div className="container">
 
                 {/* Hero Section */}
                 <section className="about-content">
                     <div className="about-content-header">
-                        <h1 className="about-heading">About Us</h1>
+                        <h1 className="about-heading">About JC Drink – Our Story & Vision</h1>
                         <p className="about-description">
                             We believe in creating extraordinary experiences through innovation,
                             dedication, and a commitment to excellence that spans every aspect of our work.

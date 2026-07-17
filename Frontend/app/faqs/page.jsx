@@ -108,9 +108,7 @@ export default function Faqs() {
                 <div className="faq-container">
                     <div className="faq-header">
                         <h2 className="faq-title">Frequently Asked Questions</h2>
-                        <p className="faq-subtitle">
-                            Sabse zyada puche jaane wale sawalon ke jawab yahan milenge.
-                        </p>
+                     
                     </div>
                     <div className="faq-list">
                         {faqData.map((faq) => (
