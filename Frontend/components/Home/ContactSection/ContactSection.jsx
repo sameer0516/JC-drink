@@ -16,7 +16,7 @@ export default function ContactSection() {
                         <div className="contact-grid">
 
                             <div data-aos="fade-right" className="contact-form-section">
-                                <h1 className="form-title">Leave a Message</h1>
+                                <h2 className="form-title">Leave a Message</h2>
                                 <p className="form-subtitle">
                                     We'll get back to you within one business day.
                                 </p>

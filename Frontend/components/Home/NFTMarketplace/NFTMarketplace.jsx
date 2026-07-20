@@ -19,12 +19,13 @@ export default function NFTMarketplace() {
 
   return (
     <div className={`nft-marketplace ${isLoaded ? "loaded" : ""}`}>
+       <h1>Refreshing Desi Cold Drinks for Every Season</h1>
       <div
         data-aos="fade-up"
         data-aos-duration="3000"
         className="container"
         id="NFTMarketplace"
-      >
+      > 
         {/* Left Content */}
         <div className="Refreshing-content">
           {/* Next.js Image — width/height zaroori hain */}
@@ -37,6 +38,8 @@ export default function NFTMarketplace() {
               priority
             />
           </div>
+
+         
 
           <div className="Refreshing-text">
             JC Drink isn't just a drink — it's full-on desi swag in every sip!

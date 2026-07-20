@@ -78,7 +78,7 @@ export default function Energizing() {
           {/* Left Text */}
           <div className="energizing-col-6">
             <div className="energizing-content-box">
-              <h1 className="energizing-title">Unleash Your X Factor</h1>
+              <h2 className="energizing-title">Unleash Your X Factor</h2>
               <p className="energizing-Subtitle">
                 No Limits. No Breaks. Just Pure Power.
               </p>

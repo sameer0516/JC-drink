@@ -12,7 +12,7 @@ export default function OurExpertise() {
         {/* Header */}
         <div className="Energizing-container-main">
           <div className="Our-Energizing-container-main-title">
-            Desi Vibes, Global Swag — That's Our Refreshment Game
+           <h2> Desi Vibes, Global Swag — That's Our Refreshment Game</h2>
           </div>
           <div className="Energizing-container-main-des">
             We don't sell drinks — we serve swag

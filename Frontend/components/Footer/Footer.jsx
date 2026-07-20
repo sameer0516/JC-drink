@@ -20,30 +20,41 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Quick Links */}
+
                     <div className="col-lg-3 col-md-6 col-12">
                         <div className={styles.footerSection}>
-                            <h3 className={styles.footerTitle}>Home</h3>
+                            <h3 className={styles.footerTitle}>About</h3>
                             <ul className={styles.footerLinks}>
                                 <li><Link href="/" className={styles.footerLink}>Home</Link></li>
+                                <li><Link href="/distributor" className={styles.footerLink}>Distributor</Link></li>
                                 <li><Link href="/about" className={styles.footerLink}>About Us</Link></li>
-                                <li><Link href="/product" className={styles.footerLink}>Products</Link></li>
-                                <li><Link href="/privacy" className={styles.footerLink}>Privacy Policy</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                       <div className="col-lg-3 col-md-6 col-12">
-                        <div className={styles.footerSection}>
-                            <h3 className={styles.footerTitle}>Quick Links</h3>
-                            <ul className={styles.footerLinks}>
-                                <li><Link href="/blog" className={styles.footerLink}>Blog</Link></li>
-                                <li><Link href="/faqs" className={styles.footerLink}>Faqs</Link></li>
                                 <li><Link href="/team" className={styles.footerLink}>Team</Link></li>
+                                <li><Link href="/blog" className={styles.footerLink}>Blog</Link></li>
+                                <li><Link href="/faqs" className={styles.footerLink}>FAQ`s</Link></li>
                                 <li><Link href="/contact" className={styles.footerLink}>Contact Us</Link></li>
                             </ul>
                         </div>
                     </div>
+
+                  
+
+                    <div className="col-lg-3 col-md-6 col-12">
+                        <div className={styles.footerSection}>
+                            <h3 className={styles.footerTitle}>Products</h3>
+                            <ul className={styles.footerLinks}>
+                                <li><Link href="/product/energy-drink/" className={styles.footerLink}>Energy Drink</Link></li>
+                                <li><Link href="/product/desi-jeera/" className={styles.footerLink}>Desi Jeera</Link></li>
+                                <li><Link href="/product/clear-lemon/" className={styles.footerLink}>Clear Lemon</Link></li>
+                                <li><Link href="/product/cola-drink/" className={styles.footerLink}>Cola Drink</Link></li>
+                                <li><Link href="/product/apple-fiizi/" className={styles.footerLink}>Apple Fiizi</Link></li>
+                                <li><Link href="/product/sweet-lemon/" className={styles.footerLink}>Sweet Lemon</Link></li>
+                                <li><Link href="/product/tangy-orange/" className={styles.footerLink}>Tangy Orange</Link></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+
 
                     {/* Contact */}
                     <div className="col-lg-3 col-md-6 col-12">

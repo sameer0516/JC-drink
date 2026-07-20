@@ -168,3 +168,9 @@
         padding: 10px;
     }
 }
+@media (min-width: 992px) {
+    .footer :global(.row) > :global([class*="col-lg-3"]) {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}
