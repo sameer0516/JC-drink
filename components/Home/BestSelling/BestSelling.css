@@ -1,0 +1,303 @@
+:root {
+    --primary: #2e7d32;
+    --primary-light: #4caf50;
+    --accent: #f9a825;
+    --accent-hover: #f57f17;
+    --bg: #f9f6f0;
+    --card-bg: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-muted: #6b6b6b;
+    --border: #e8e2d9;
+    --shadow: 0 4px 24px #00000014;
+    --shadow-hover: 0 12px 40px #00000024;
+    --radius: 7px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.bestselling-section {
+    background: var(--bg);
+    padding: 72px 0 80px;
+    font-family: 'DM Sans', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.bestselling-section::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #2e7d3212 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.bestselling-section::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    right: -60px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, #f9a82517 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Header */
+.bestselling-header {
+    text-align: center;
+    margin-bottom: 52px;
+    padding: 0 24px;
+}
+
+.bestselling-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 400;
+    color: var(--text-dark);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+}
+
+.bestselling-header h2::after {
+    content: '';
+    display: block;
+    width: 130px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 2px;
+    margin: 12px auto 0;
+}
+
+/* ===================== SLIDER (continuous auto-scroll) ===================== */
+.bestselling-slider-viewport {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 48px;
+    /* soft fade at both edges so cards don't hard-cut */
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%);
+}
+
+.bestselling-track {
+    display: flex;
+    width: max-content;
+    gap: 24px;
+    padding: 4px 24px;
+    animation: bs-scroll 30s linear infinite;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Cursor le jaane par slider ruk jayega, hatate hi wapas smooth chalega */
+.bestselling-slider-viewport:hover .bestselling-track {
+    animation-play-state: paused;
+}
+
+@keyframes bs-scroll {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        /* products list duplicate hai, isliye -50% pe pura ek set scroll ho chuka hota hai
+           aur seamlessly loop reset ho jaata hai */
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+/* Card */
+.product-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 22px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    flex: 0 0 280px;
+    width: 280px;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow-hover);
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.06);
+}
+
+/* Image wrapper */
+.product-img-wrapper {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    border-radius: var(--radius) var(--radius) 0 0;
+    background: #f0ece4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+/* Fallback placeholder */
+.product-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background: linear-gradient(135deg, #e8f5e9, #fff9c4);
+}
+
+/* Card body */
+.product-info {
+    padding: 18px 20px 0;
+    width: 100%;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.product-name {
+    font-size: 23px;
+    font-weight: 400;
+    color: var(--text-dark);
+    font-family: "Playfair Display", Georgia, serif;
+    line-height: 1.4;
+}
+
+.btn-view-more {
+    display: inline-block;
+    padding: 8px 26px;
+    border: 1.5px solid var(--primary);
+    border-radius: 50px;
+    background: transparent;
+    color: var(--primary);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease, transform 0.18s ease;
+    text-decoration: none;
+}
+
+.btn-view-more:hover {
+    background: var(--primary);
+    color: #fff;
+    transform: scale(1.04);
+}
+
+/* View All CTA */
+.bestselling-cta {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-view-all {
+    display: inline-block;
+    padding: 13px 40px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    box-shadow: 0 4px 18px #f9a82559;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    text-decoration: none;
+}
+
+.btn-view-all a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-view-all:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px #f9a82573;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+    .product-card {
+        flex: 0 0 240px;
+        width: 240px;
+    }
+
+    .product-img-wrapper {
+        height: 240px;
+    }
+
+    .bestselling-track {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 540px) {
+    .bestselling-section {
+        padding: 48px 0 60px;
+    }
+
+    .bestselling-header {
+        margin-bottom: 36px;
+    }
+
+    .product-card {
+        flex: 0 0 190px;
+        width: 190px;
+    }
+
+    .product-img-wrapper {
+        height: 190px;
+    }
+
+    .bestselling-track {
+        gap: 14px;
+        padding: 4px 16px;
+        animation-duration: 22s;
+    }
+
+    .product-info {
+        padding: 14px 14px 0;
+        gap: 10px;
+    }
+
+    .product-name {
+        font-size: 0.82rem;
+    }
+
+    .btn-view-more {
+        padding: 7px 18px;
+        font-size: 0.76rem;
+    }
+}

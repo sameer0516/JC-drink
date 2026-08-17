@@ -1,0 +1,449 @@
+/* Smooth scroll optimization */
+* {
+    scroll-behavior: smooth;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+.vitamin-container {
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #fd0644, #fd9a7c, #ff6b6b, #f0c92e, #6bcf7f, #3bcac1, #25afce, #41c486);
+    background-size: 400% 400%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    animation: gradientShift 12s ease infinite;
+    /* Performance optimization */
+    will-change: background-position;
+    transform: translateZ(0);
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Simplified pseudo-elements - removed heavy animations */
+.vitamin-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, #8b5cf620 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.vitamin-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="40" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+    pointer-events: none;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    transform: translateZ(0);
+}
+
+.vitamin-container-title {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.vitamin-container-des {
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.vitamin-card {
+    background: #fffffffa;
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 2.5rem;
+    box-shadow: 0 25px 50px #00000026;
+    position: relative;
+    border: 1px solid #ffffff4d;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.vitamin-card:hover {
+    transform: translateY(-15px) translateZ(0);
+    box-shadow: 0 40px 80px #8b5cf640;
+}
+
+/* Removed cardFloat animation for smoother scroll */
+
+.product-title {
+    background-image: linear-gradient(to top, #284b8b 0%, #2a4c8d 5%, #345792e7 100%);
+    color: white;
+    font-weight: 800;
+    font-size: 15px;
+    padding: 12px 20px;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 25px #8b5cf64d;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #ffffff4d, transparent);
+    transition: left 0.7s ease;
+}
+
+.product-title:hover::before {
+    left: 100%;
+}
+
+.product-title:hover {
+    transform: scale(1.05);
+}
+
+.selection-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.selection-btn {
+    flex: 1;
+    padding: 10px 16px;
+    border: 2px solid #8b5cf633;
+    border-radius: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    color: #6c757d;
+    position: relative;
+    overflow: hidden;
+}
+
+.selection-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px #895af626;
+    border-color: #2a4c8d;
+}
+
+.selection-btn.active {
+    background-image: linear-gradient(to top, #284b8b 0%, #2a4c8d 5%, #345792e7 100%);
+    color: white;
+    box-shadow: 0 10px 25px #8b5cf64d;
+    border-color: #8b5cf699;
+}
+
+.price-section {
+    background: linear-gradient(135deg, #ffffffe6, #f8f9faf2);
+    border: 2px solid #8b5cf61a;
+    border-radius: 20px;
+    padding: 7px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.price-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-image: linear-gradient(to top, #284b8b 0%, #2a4c8d 5%, #345792e7 100%);
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.product-images {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.bottle-container {
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    will-change: transform;
+}
+
+.bottle-container:hover {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.bottle-main {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottle-main img {
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.shop-button {
+    width: 100%;
+    background-image: linear-gradient(to top, #284b8b 0%, #2a4c8d 5%, #345792e7 100%);
+    color: white;
+    font-weight: 800;
+    font-size: 1.2rem;
+    padding: 1.2rem 2rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 25px #8b5cf64d;
+    letter-spacing: 1px;
+    will-change: transform;
+}
+
+.shop-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px #8b5cf666;
+}
+
+.shop-button:active {
+    transform: translateY(0);
+}
+
+.shop-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #ffffff4d, transparent);
+    transition: left 0.7s ease;
+}
+
+.shop-button:hover::before {
+    left: 100%;
+}
+
+.shop-button-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.shop-button-content a {
+    text-decoration: none;
+    color: white;
+}
+
+.arrow-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+.shop-button:hover .arrow-icon {
+    transform: translateX(4px);
+}
+
+.decorative-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.decorative-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: #8b5cf626;
+}
+
+.decorative-circle-1 {
+    width: 80px;
+    height: 80px;
+    top: 20px;
+    right: 20px;
+}
+
+.decorative-circle-2 {
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    left: 30px;
+}
+
+.decorative-circle-3 {
+    width: 40px;
+    height: 40px;
+    top: 60%;
+    right: 10px;
+}
+
+.decorative-circle-4 {
+    width: 30px;
+    height: 30px;
+    bottom: 60%;
+    left: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .vitamin-container {
+        padding: 1rem;
+    }
+
+    .vitamin-container-title {
+        font-size: 32px;
+    }
+
+    .vitamin-container-des {
+        font-size: 18px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .vitamin-card {
+        padding: 2rem;
+        max-width: 100%;
+    }
+
+    .product-title {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .selection-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .selection-btn {
+        padding: 8px 13px;
+        font-size: 1rem;
+    }
+
+    .price {
+        font-size: 1.8rem;
+    }
+
+    .bottle-main {
+        width: 150px;
+        height: 225px;
+    }
+
+    .shop-button {
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .vitamin-container {
+        padding: 0.5rem;
+    }
+
+    .vitamin-container-title {
+        font-size: 28px;
+    }
+
+    .vitamin-container-des {
+        font-size: 16px;
+    }
+
+    .vitamin-card {
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+
+    .product-title {
+        font-size: 1.1rem;
+    }
+
+    .price {
+        font-size: 1.5rem;
+    }
+
+    .bottle-main {
+        width: 120px;
+        height: 180px;
+    }
+
+    .shop-button {
+        padding: 0.9rem 1.2rem;
+        font-size: 1rem;
+    }
+}
