@@ -86,7 +86,7 @@ function FaqItem({ faq, isOpen, onClick }) {
     );
 }
 
-export default function Faqs() {
+export default function FaqsClient() {
     const [openId, setOpenId] = useState(null);
 
     const handleToggle = (id) => {

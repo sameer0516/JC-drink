@@ -1,5 +1,5 @@
 /* Contact Section Styles */
-.contact-section {
+.cf-contact-section {
     background: linear-gradient(135deg, #0a0a1a 0%, #131322 30%, #1a1a2e 70%, #0b1120 100%);
     min-height: 100vh;
     padding: 0px 0px;
@@ -8,7 +8,7 @@
     overflow: hidden;
 }
 
-.contact-section::before {
+.cf-contact-section::before {
     content: '';
     position: absolute;
     top: 0;
@@ -20,7 +20,7 @@
     pointer-events: none;
 }
 
-.contact-section-container {
+.cf-contact-section-container {
     background-image: url('/Main-Banner-6.webp');
     width: 100%;
     background-repeat: no-repeat;
@@ -33,64 +33,22 @@
     padding: 50px 0;
 }
 
-.contact-header {
-    text-align: center;
-    margin-bottom: 60px;
-    position: relative;
-    z-index: 2;
-}
-
-.contact-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 900;
-    margin: 0 0 20px 0;
-    background: linear-gradient(45deg, #ffffff, #cccccc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 0 30px #ffffff1a;
-}
-
-.contact-subtitle {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #cccccc;
-    opacity: 0.9;
-}
-
-/* Contact Content */
-.contact-content {
+.cf-contact-content {
     max-width: 1400px;
     margin: 0 auto;
     position: relative;
     z-index: 2;
-    padding: 20 20px;
+    padding: 20px 20px;
 }
 
-.contact-grid {
+.cf-contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
 }
 
-.product-showcase-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.product-showcase-image img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px #0000004d;
-}
-
-.contact-form-section {
+.cf-contact-form-section {
     background-color: #ffffffd9;
     backdrop-filter: blur(10px);
     border: 1px solid #ffffff4d;
@@ -101,41 +59,42 @@
     box-shadow: 0 20px 40px #0000004d;
 }
 
-.form-title {
+.cf-form-title {
     font-size: 2.5rem;
     font-weight: 900;
     margin: 0 0 10px 0;
     color: #1a1a2e;
 }
 
-.form-subtitle {
+.cf-form-subtitle {
     color: #333;
     margin-bottom: 30px;
     line-height: 1.6;
     font-size: 16px;
 }
 
-.contact-form {
+.cf-contact-form {
     position: relative;
     z-index: 1;
 }
 
-.form-row {
+.cf-form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-.form-group {
+.cf-form-group {
     position: relative;
+    margin-bottom: 20px;
 }
 
-.form-group.full-width {
+.cf-form-group.cf-full-width {
     grid-column: 1 / -1;
 }
 
-.form-input,
-.form-textarea {
+.cf-form-input,
+.cf-form-textarea {
     width: 100%;
     padding: 16px 20px;
     border: 1px solid #ccc;
@@ -147,15 +106,14 @@
     box-shadow: 0 2px 5px #0000001a;
 }
 
-.form-textarea {
+.cf-form-textarea {
     resize: vertical;
     min-height: 120px;
     font-family: inherit;
-    margin-bottom: 20px;
 }
 
-.form-input:focus,
-.form-textarea:focus {
+.cf-form-input:focus,
+.cf-form-textarea:focus {
     outline: none;
     background: white;
     border-color: #284b8b;
@@ -163,12 +121,41 @@
     transform: translateY(-2px);
 }
 
-.form-input::placeholder,
-.form-textarea::placeholder {
+.cf-form-input::placeholder,
+.cf-form-textarea::placeholder {
     color: #666;
 }
 
-.submit-btn {
+/* Validation error state */
+.cf-input-error {
+    border-color: #d93025 !important;
+    box-shadow: 0 0 0 3px #d930251a !important;
+}
+
+.cf-field-error-msg {
+    color: #d93025;
+    font-size: 13px;
+    margin: 6px 0 0 0;
+}
+
+.cf-form-success-msg {
+    color: #1a7f37;
+    background: #e6f7ec;
+    border: 1px solid #b6ebc9;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.cf-form-error-msg {
+    color: #d93025;
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+.cf-submit-btn {
     background-image: linear-gradient(to top, #284b8b 0%, #2a4c8d 5%, #345792e7 100%);
     color: #ffffff;
     border: none;
@@ -185,7 +172,7 @@
     width: 100%;
 }
 
-.submit-btn::before {
+.cf-submit-btn::before {
     content: '';
     position: absolute;
     top: 0;
@@ -196,62 +183,60 @@
     transition: left 0.5s ease;
 }
 
-.submit-btn:hover::before {
+.cf-submit-btn:hover::before {
     left: 100%;
 }
 
-.submit-btn:hover {
+.cf-submit-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px #284b8b66;
 }
 
-.submit-btn:active {
+.cf-submit-btn:active {
     transform: translateY(-1px);
 }
 
+.cf-submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
 @media (max-width: 1024px) {
-    .contact-grid {
+    .cf-contact-grid {
         grid-template-columns: 1fr;
         gap: 60px;
     }
 }
 
 @media (max-width: 768px) {
-    .contact-section {
+    .cf-contact-section {
         padding: 40px 15px;
     }
 
-    .form-row {
+    .cf-form-row {
         grid-template-columns: 1fr;
         gap: 20px;
         margin-bottom: 0;
     }
 
-    .form-group {
-        margin-bottom: 20px;
-    }
-
-    .form-title {
+    .cf-form-title {
         font-size: 2rem;
     }
 
-    .contact-form-section {
+    .cf-contact-form-section {
         padding: 30px 20px;
     }
 }
 
 @media (max-width: 480px) {
-    .contact-subtitle {
-        font-size: 14px;
-    }
-
-    .form-input,
-    .form-textarea {
+    .cf-form-input,
+    .cf-form-textarea {
         padding: 14px 16px;
         font-size: 14px;
     }
 
-    .submit-btn {
+    .cf-submit-btn {
         padding: 14px 30px;
         font-size: 14px;
     }

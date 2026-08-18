@@ -106,7 +106,7 @@ export default function Main() {
           onClick={() => handleShopClick(productId)}
         >
           <div className="shop-button-content">
-            <Link href="/Product">
+            <Link href="/product">
               <span>GO SHOP</span>
             </Link>
             <svg className="arrow-icon" fill="currentColor" viewBox="0 0 20 20">

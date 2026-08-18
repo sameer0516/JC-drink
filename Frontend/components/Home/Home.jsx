@@ -402,12 +402,12 @@ export default function Home() {
             <Main />
             <ChooseUs />
             <BestSelling />
-            <ContactSection />
             <Nutrition />
             <AboutUs />
             <FeatureBadges />
             <Testimonials />
             <LatestBlog />
+            <ContactSection />
             <FAQS />
         </>
     );

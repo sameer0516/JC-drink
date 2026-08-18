@@ -1,6 +1,6 @@
 import SitemapList from "./SitemapList";
 
-const PAGE_URL = "https://barosche.com/sitemap/";
+const PAGE_URL = "https://jcdrink.com/sitemap/";
 const OG_IMAGE = "/logo.png";
 const TITLE = "HTML Sitemap | Explore All Pages Easily";
 const DESCRIPTION =
@@ -18,7 +18,7 @@ export const metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: PAGE_URL,
-    siteName: "Barosche",
+    siteName: "JC Drink",
     type: "website",
     locale: "en_IN",
     images: [
@@ -26,7 +26,7 @@ export const metadata = {
         url: OG_IMAGE,
         width: 2048,
         height: 997,
-        alt: "Barosche Sitemap",
+        alt: "JC Drink Sitemap",
       },
     ],
   },
@@ -35,12 +35,12 @@ export const metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    site: "@barosche",
-    creator: "@barosche",
+    site: "@jcdrink",
+    creator: "@jcdrink",
     images: [
       {
         url: OG_IMAGE,
-        alt: "Barosche Sitemap",
+        alt: "JC Drink Sitemap",
       },
     ],
   },

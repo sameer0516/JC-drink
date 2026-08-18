@@ -1,5 +1,7 @@
 "use client";
 
+import emailjs from "@emailjs/browser";
+
 import React, { useState } from 'react';
 import "./distributor.css";
 
@@ -375,8 +377,6 @@ export default function Distributor() {
   const [status, setStatus] = useState({ loading: false, error: null });
   const [openIndex, setOpenIndex] = useState(null);
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.jcdrink.com";
-
   const toggleFaq = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
@@ -390,24 +390,49 @@ export default function Distributor() {
     setStatus({ loading: true, error: null });
 
     try {
-      const res = await fetch(`${API_URL}/api/distributor`, {
+      // 1. Web3Forms ko data bhejo (dailyreport015@gmail.com pe lead jayegi)
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "4a9bb777-cba4-4d73-988c-45782826f6d0",
+          subject: `New Distributor Inquiry: ${formData.subject}`,
+          from_name: "JC Drink Website",
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          contact_no: formData.contactNo,
+          email: formData.email,
+          message: formData.message,
+        }),
       });
 
-      const data = await res.json();
+      const result = await res.json();
 
-      if (!res.ok) {
-        throw new Error(data.message || "Something went wrong.");
+      if (result.success) {
+        // 2. User ko confirmation mail bhejo (EmailJS se)
+        try {
+          await emailjs.send(
+            "service_kuj44zk",
+            "template_8q3mab6",
+            {
+              name: formData.firstName,
+              email: formData.email,
+            },
+            "UauMKTazbyzpUjf7y"
+          );
+        } catch (emailErr) {
+          console.error("Confirmation email failed:", emailErr);
+        }
+
+        setSubmitted(true);
+        setStatus({ loading: false, error: null });
+        setFormData({ firstName: '', lastName: '', contactNo: '', email: '', subject: '', message: '' });
+        setTimeout(() => setSubmitted(false), 4000);
+      } else {
+        setStatus({ loading: false, error: "Something went wrong. Please try again." });
       }
-
-      setSubmitted(true);
-      setStatus({ loading: false, error: null });
-      setFormData({ firstName: '', lastName: '', contactNo: '', email: '', subject: '', message: '' });
-      setTimeout(() => setSubmitted(false), 4000);
     } catch (err) {
-      setStatus({ loading: false, error: err.message });
+      setStatus({ loading: false, error: "Something went wrong. Please try again." });
     }
   };
 
