@@ -1,9 +1,9 @@
 "use client";
 
-import emailjs from "@emailjs/browser";
-
 import React, { useState } from 'react';
 import "./distributor.css";
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.jcdrink.com";
 
 const faqItems = [
   {
@@ -390,49 +390,25 @@ export default function Distributor() {
     setStatus({ loading: true, error: null });
 
     try {
-      // 1. Web3Forms ko data bhejo (dailyreport015@gmail.com pe lead jayegi)
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch(`${API_URL}/api/distributor`, {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: "4a9bb777-cba4-4d73-988c-45782826f6d0",
-          subject: `New Distributor Inquiry: ${formData.subject}`,
-          from_name: "JC Drink Website",
-          first_name: formData.firstName,
-          last_name: formData.lastName,
-          contact_no: formData.contactNo,
-          email: formData.email,
-          message: formData.message,
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
-      const result = await res.json();
+      const data = await res.json();
 
-      if (result.success) {
-        // 2. User ko confirmation mail bhejo (EmailJS se)
-        try {
-          await emailjs.send(
-            "service_kuj44zk",
-            "template_8q3mab6",
-            {
-              name: formData.firstName,
-              email: formData.email,
-            },
-            "UauMKTazbyzpUjf7y"
-          );
-        } catch (emailErr) {
-          console.error("Confirmation email failed:", emailErr);
-        }
-
-        setSubmitted(true);
-        setStatus({ loading: false, error: null });
-        setFormData({ firstName: '', lastName: '', contactNo: '', email: '', subject: '', message: '' });
-        setTimeout(() => setSubmitted(false), 4000);
-      } else {
-        setStatus({ loading: false, error: "Something went wrong. Please try again." });
+      if (!res.ok) {
+        throw new Error(data.message || "Something went wrong.");
       }
+
+      setSubmitted(true);
+      setStatus({ loading: false, error: null });
+      setFormData({ firstName: '', lastName: '', contactNo: '', email: '', subject: '', message: '' });
+      setTimeout(() => setSubmitted(false), 4000);
+      
     } catch (err) {
-      setStatus({ loading: false, error: "Something went wrong. Please try again." });
+      setStatus({ loading: false, error: err.message || "Something went wrong. Please try again." });
     }
   };
 
@@ -443,7 +419,7 @@ export default function Distributor() {
       </div>
 
       <div className="distributor-page">
-        <div className="distributor-page-title">Become a JC Cold Drink Distributor in India – Grow Your Business</div>
+        <h1 className="distributor-page-title">Become a JC Cold Drink Distributor in India – Grow Your Business</h1>
 
         {products.map((p) => (
           <section key={p.id} className={`product-hero ${p.bg || ''}`}>
@@ -497,7 +473,7 @@ export default function Distributor() {
             {/* Right: Form */}
             <div className="contact-form-wrapper">
               {submitted && (
-                <div className="form-success">
+                <div className="form-success" style={{ color: "green", marginBottom: "15px", fontWeight: "bold" }}>
                   Thank you! We'll be in touch soon.
                 </div>
               )}
@@ -587,7 +563,7 @@ export default function Distributor() {
                     {status.loading ? "SENDING..." : "Submit"}
                   </button>
                   {status.error && (
-                    <p className="form-error-msg">{status.error}</p>
+                    <p className="form-error-msg" style={{ color: "red", marginTop: "10px" }}>{status.error}</p>
                   )}
                 </div>
               </form>

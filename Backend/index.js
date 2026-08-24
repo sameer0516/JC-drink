@@ -1,4 +1,4 @@
-// server.js - Updated with Auth Route
+// index.js - Updated with Contact Route
 const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
@@ -9,6 +9,8 @@ const productRoutes = require('./routes/productRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 const authRoutes = require('./routes/authRoutes');
 const blogRoutes = require('./routes/blogRoutes');
+const contactRoutes = require('./routes/contactRoutes'); // Added contactRoutes
+const distributorRoutes = require('./routes/distributorRoutes');
 
 dotenv.config();
 const app = express();
@@ -29,6 +31,7 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/api/distributor', distributorRoutes);
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
@@ -52,12 +55,12 @@ const transporter = nodemailer.createTransport({
 
 app.get('/', (req, res) => res.send('API is running...'));
 
-// Add auth routes
+// Add routes
 app.use('/api/auth', authRoutes);
 app.use('/api/blogs', blogRoutes);
 app.use('/api/products', productRoutes);
-
 app.use('/api/payment', paymentRoutes);
+app.use('/api/contact', contactRoutes); // Added contact endpoint
 
 const checkoutRoutes = require('./routes/checkout');
 app.use('/api/checkout', checkoutRoutes);

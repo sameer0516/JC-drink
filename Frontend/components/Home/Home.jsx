@@ -17,7 +17,7 @@ import LatestBlog from "./LatestBlog/LatestBlog";
 const SITE_URL = "https://jcdrink.com";
 const PAGE_URL = "https://jcdrink.com/";
 const OG_IMAGE = "https://jcdrink.com/New-About-us.png";
-const LOGO_IMAGE = "https://jcdrink.com/jcDrink-logo.webp";
+const LOGO_IMAGE = "https://jcdrink.com/jcDrink-logo.jpg";
 const TITLE = "JC – Refreshing & Affordable Cold Drinks in India";
 const DESCRIPTION =
     "Discover JC cold drinks – refreshing, affordable beverages including jeera, lemon, cola, and energy drinks across India.";

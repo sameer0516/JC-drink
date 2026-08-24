@@ -1,7 +1,8 @@
 "use client";
 
-import emailjs from "@emailjs/browser";
 import { useState } from "react";
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.jcdrink.com";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_REGEX = /^[0-9+\-\s()]{7,15}$/;
@@ -77,55 +78,31 @@ export default function ContactForm() {
         setStatus({ loading: true, success: null, error: null });
 
         try {
-            // 1. Web3Forms ko data bhejo (lead yaha jayegi)
-            const res = await fetch("https://api.web3forms.com/submit", {
+            const res = await fetch(`${API_URL}/api/contact`, {
                 method: "POST",
-                headers: { "Content-Type": "application/json", Accept: "application/json" },
-                body: JSON.stringify({
-                    access_key: "4a9bb777-cba4-4d73-988c-45782826f6d0",
-                    subject: `New Contact Inquiry: ${formData.subject}`,
-                    from_name: "JC Drink Website - Contact Us",
-                    first_name: formData.firstName,
-                    last_name: formData.lastName,
-                    email: formData.email,
-                    phone: formData.phone,
-                    message: formData.message,
-                }),
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
             });
 
-            const result = await res.json();
+            const data = await res.json();
 
-            if (result.success) {
-                // 2. User ko confirmation mail bhejo (EmailJS se)
-                try {
-                    await emailjs.send(
-                        "service_kuj44zk",
-                        "template_8q3mab6",
-                        {
-                            name: formData.firstName,
-                            email: formData.email,
-                        },
-                        "UauMKTazbyzpUjf7y"
-                    );
-                } catch (emailErr) {
-                    console.error("Confirmation email failed:", emailErr);
-                }
-
-                setStatus({ loading: false, success: "Thank you! We'll be in touch soon.", error: null });
-                setFormData({
-                    firstName: "",
-                    lastName: "",
-                    email: "",
-                    phone: "",
-                    subject: "General Inquiry",
-                    message: "",
-                });
-                setTimeout(() => setStatus({ loading: false, success: null, error: null }), 4000);
-            } else {
-                setStatus({ loading: false, success: null, error: "Something went wrong. Please try again." });
+            if (!res.ok) {
+                throw new Error(data.message || "Something went wrong.");
             }
+
+            setStatus({ loading: false, success: "Thank you! We'll be in touch soon.", error: null });
+            setFormData({
+                firstName: "",
+                lastName: "",
+                email: "",
+                phone: "",
+                subject: "General Inquiry",
+                message: "",
+            });
+            setTimeout(() => setStatus({ loading: false, success: null, error: null }), 4000);
+            
         } catch (err) {
-            setStatus({ loading: false, success: null, error: "Something went wrong. Please try again." });
+            setStatus({ loading: false, success: null, error: err.message || "Something went wrong. Please try again." });
         }
     };
 
@@ -154,7 +131,7 @@ export default function ContactForm() {
                                                 onChange={handleChange}
                                             />
                                             {fieldErrors.firstName && (
-                                                <p className="cf-field-error-msg">{fieldErrors.firstName}</p>
+                                                <p className="cf-field-error-msg" style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>{fieldErrors.firstName}</p>
                                             )}
                                         </div>
                                         <div className="cf-form-group">
@@ -167,7 +144,7 @@ export default function ContactForm() {
                                                 onChange={handleChange}
                                             />
                                             {fieldErrors.lastName && (
-                                                <p className="cf-field-error-msg">{fieldErrors.lastName}</p>
+                                                <p className="cf-field-error-msg" style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>{fieldErrors.lastName}</p>
                                             )}
                                         </div>
                                     </div>
@@ -183,7 +160,7 @@ export default function ContactForm() {
                                                 onChange={handleChange}
                                             />
                                             {fieldErrors.email && (
-                                                <p className="cf-field-error-msg">{fieldErrors.email}</p>
+                                                <p className="cf-field-error-msg" style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>{fieldErrors.email}</p>
                                             )}
                                         </div>
                                         <div className="cf-form-group">
@@ -196,7 +173,7 @@ export default function ContactForm() {
                                                 onChange={handleChange}
                                             />
                                             {fieldErrors.phone && (
-                                                <p className="cf-field-error-msg">{fieldErrors.phone}</p>
+                                                <p className="cf-field-error-msg" style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>{fieldErrors.phone}</p>
                                             )}
                                         </div>
                                     </div>
@@ -211,7 +188,7 @@ export default function ContactForm() {
                                             onChange={handleChange}
                                         />
                                         {fieldErrors.subject && (
-                                            <p className="cf-field-error-msg">{fieldErrors.subject}</p>
+                                            <p className="cf-field-error-msg" style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>{fieldErrors.subject}</p>
                                         )}
                                     </div>
 
@@ -224,7 +201,7 @@ export default function ContactForm() {
                                             onChange={handleChange}
                                         ></textarea>
                                         {fieldErrors.message && (
-                                            <p className="cf-field-error-msg">{fieldErrors.message}</p>
+                                            <p className="cf-field-error-msg" style={{ color: "red", fontSize: "12px", marginTop: "5px" }}>{fieldErrors.message}</p>
                                         )}
                                     </div>
 
@@ -233,10 +210,10 @@ export default function ContactForm() {
                                     </button>
 
                                     {status.success && (
-                                        <p className="cf-form-success-msg">{status.success}</p>
+                                        <p className="cf-form-success-msg" style={{ color: "green", marginTop: "10px", fontWeight: "bold" }}>{status.success}</p>
                                     )}
                                     {status.error && (
-                                        <p className="cf-form-error-msg">{status.error}</p>
+                                        <p className="cf-form-error-msg" style={{ color: "red", marginTop: "10px", fontWeight: "bold" }}>{status.error}</p>
                                     )}
                                 </form>
                             </div>

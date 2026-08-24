@@ -70,7 +70,7 @@ function buildSchema(blog, slug) {
     publisher: {
       "@type": "Organization",
       name: "JC Drink",
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/jcDrink-logo.webp` },
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/jcDrink-logo.jpg` },
     },
     datePublished: blog.createdAt,
     dateModified: blog.updatedAt || blog.createdAt,

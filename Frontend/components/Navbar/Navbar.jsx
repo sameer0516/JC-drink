@@ -48,7 +48,7 @@ export default function Navbar() {
 
                     <div className={styles.navbarLogo}>
                         <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
-                            <img src="/jcDrink-logo.webp" alt="JC Drink Logo" className={styles.logo} />
+                            <img src="/jcDrink-logo.jpg" alt="JC Drink Logo" className={styles.logo} />
                         </Link>
                     </div>
 

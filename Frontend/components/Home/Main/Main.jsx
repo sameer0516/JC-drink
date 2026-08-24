@@ -55,71 +55,69 @@ export default function Main() {
   };
 
   const renderProductCard = (productId, product) => (
-    <>
-      <div key={productId} className="vitamin-card">
-        <div className="decorative-elements">
-          <div className="decorative-circle decorative-circle-1" />
-          <div className="decorative-circle decorative-circle-2" />
-          <div className="decorative-circle decorative-circle-3" />
-          <div className="decorative-circle decorative-circle-4" />
-        </div>
-
-        <div className="product-title">{product.name}</div>
-
-        {/* Selection Buttons */}
-        <div className="selection-buttons">
-          {["1 BOTTLE", "3 BOTTLES"].map((option) => (
-            <button
-              key={option}
-              onClick={() => handleOptionSelect(productId, option)}
-              className={`selection-btn ${selectedOptions[productId] === option ? "active" : ""
-                }`}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-
-        {/* Price */}
-        <div className="price-section">
-          <div className="price">
-            ₹ {product.options[selectedOptions[productId]].price}
-          </div>
-        </div>
-
-        <div className="product-images">
-          <div className="bottle-container">
-            <div className="bottle bottle-main">
-              <Image
-                src={product.image}
-                alt={product.name}
-                width={300}
-                height={400}
-                style={{ width: "100%", height: "auto" }}
-              />
-            </div>
-          </div>
-        </div>
-
-        <button
-          className="shop-button"
-          onClick={() => handleShopClick(productId)}
-        >
-          <div className="shop-button-content">
-            <Link href="/product">
-              <span>GO SHOP</span>
-            </Link>
-            <svg className="arrow-icon" fill="currentColor" viewBox="0 0 20 20">
-              <path
-                fillRule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
-        </button>
+    <div key={productId} className="vitamin-card">
+      <div className="decorative-elements">
+        <div className="decorative-circle decorative-circle-1" />
+        <div className="decorative-circle decorative-circle-2" />
+        <div className="decorative-circle decorative-circle-3" />
+        <div className="decorative-circle decorative-circle-4" />
       </div>
-    </>
+
+      <div className="product-title">{product.name}</div>
+
+      {/* Selection Buttons */}
+      <div className="selection-buttons">
+        {["1 BOTTLE", "3 BOTTLES"].map((option) => (
+          <button
+            key={option}
+            onClick={() => handleOptionSelect(productId, option)}
+            className={`selection-btn ${selectedOptions[productId] === option ? "active" : ""
+              }`}
+          >
+            {option}
+          </button>
+        ))}
+      </div>
+
+      {/* Price */}
+      <div className="price-section">
+        <div className="price">
+          ₹ {product.options[selectedOptions[productId]].price}
+        </div>
+      </div>
+
+      <div className="product-images">
+        <div className="bottle-container">
+          <div className="bottle bottle-main">
+            <Image
+              src={product.image}
+              alt={product.name}
+              width={300}
+              height={400}
+              style={{ width: "100%", height: "auto" }}
+            />
+          </div>
+        </div>
+      </div>
+
+      <button
+        className="shop-button"
+        onClick={() => handleShopClick(productId)}
+      >
+        <div className="shop-button-content">
+          <Link href="/product">
+            <span>GO SHOP</span>
+          </Link>
+          <svg className="arrow-icon" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fillRule="evenodd"
+              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </div>
+      </button>
+    </div>
   );
 
   return (

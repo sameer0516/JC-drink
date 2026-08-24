@@ -40,6 +40,19 @@ export default function BlogListPage({ initialBlogs = [] }) {
     fetchBlogs();
   }, [fetchBlogs]);
 
+  // Blog card click hone par page turant top se open ho (smooth-scroll animation avoid karne ke liye)
+  const handleBlogClick = () => {
+    if (typeof window !== "undefined") {
+      const html = document.documentElement;
+      const prevBehavior = html.style.scrollBehavior;
+      html.style.scrollBehavior = "auto";
+      window.scrollTo(0, 0);
+      window.setTimeout(() => {
+        html.style.scrollBehavior = prevBehavior;
+      }, 0);
+    }
+  };
+
   return (
     <>
       <div className="Blog">
@@ -48,7 +61,7 @@ export default function BlogListPage({ initialBlogs = [] }) {
           <div className="container">
             <div className="row">
               <div className="About-title">
-                <h2>Latest Blogs</h2>
+                <h1>Latest Blogs</h1>
               </div>
 
               {loading ? (
@@ -65,7 +78,11 @@ export default function BlogListPage({ initialBlogs = [] }) {
 
                   return (
                     <div className="col-lg-4 col-md-4 col-sm-12 col-12" key={blog._id}>
-                      <Link href={`/blog/${blog.urlHandle}`} style={{ textDecoration: "none" }}>
+                      <Link
+                        href={`/blog/${blog.urlHandle}`}
+                        style={{ textDecoration: "none" }}
+                        onClick={handleBlogClick}
+                      >
                         <div className="Blog-Section">
                           <div className="blog-img-wrapper">
                             <img src={imageSrc} alt={blog.altTag || blog.title} />

@@ -64,7 +64,7 @@ const faqData = [
 
 function PlusIcon({ open }) {
     return (
-        <span className={`faq-icon ${open ? "faq-icon--open" : ""}`}>
+        <span className={`jcFaq-icon ${open ? "jcFaq-icon--open" : ""}`}>
             {open ? "−" : "+"}
         </span>
     );
@@ -72,14 +72,14 @@ function PlusIcon({ open }) {
 
 function FaqItem({ faq, isOpen, onClick }) {
     return (
-        <div className={`faq-item ${isOpen ? "faq-item--open" : ""}`}>
-            <button className="faq-btn" onClick={onClick} aria-expanded={isOpen}>
-                <span className="faq-q">{faq.question}</span>
+        <div className={`jcFaq-item ${isOpen ? "jcFaq-item--open" : ""}`}>
+            <button className="jcFaq-btn" onClick={onClick} aria-expanded={isOpen}>
+                <span className="jcFaq-q">{faq.question}</span>
                 <PlusIcon open={isOpen} />
             </button>
-            <div className={`faq-body ${isOpen ? "faq-body--open" : ""}`}>
-                <div className="faq-body-inner">
-                    <p className="faq-a">{faq.answer}</p>
+            <div className={`jcFaq-body ${isOpen ? "jcFaq-body--open" : ""}`}>
+                <div className="jcFaq-body-inner">
+                    <p className="jcFaq-a">{faq.answer}</p>
                 </div>
             </div>
         </div>
@@ -100,14 +100,14 @@ export default function FaqsClient() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
 
-            <div className="faq-section-banner"></div>
-            <section className="faq-section">
-                <div className="faq-container">
-                    <div className="faq-header">
-                        <h2 className="faq-title">Frequently Asked Questions</h2>
-                     
+            <div className="jcFaq-section-banner"></div>
+            <section className="jcFaq-section">
+                <div className="jcFaq-container">
+                    <div className="jcFaq-header">
+                        <h1 className="jcFaq-title">Frequently Asked Questions</h1>
+
                     </div>
-                    <div className="faq-list">
+                    <div className="jcFaq-list">
                         {faqData.map((faq) => (
                             <FaqItem
                                 key={faq.id}

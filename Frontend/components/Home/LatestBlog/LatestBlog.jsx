@@ -47,6 +47,21 @@ export default function LatestBlog() {
     };
   }, []);
 
+  // Blog card click hone par page turant top se open ho (smooth-scroll animation avoid karne ke liye)
+  const handleBlogClick = () => {
+    if (typeof window !== "undefined") {
+      const html = document.documentElement;
+      const prevBehavior = html.style.scrollBehavior;
+      html.style.scrollBehavior = "auto";
+      window.scrollTo(0, 0);
+      // Thoda delay ke baad original scroll-behavior wapas restore kar do,
+      // taaki site ke baaki smooth-scroll effects (agar hain) unaffected rahein
+      window.setTimeout(() => {
+        html.style.scrollBehavior = prevBehavior;
+      }, 0);
+    }
+  };
+
   if (loading) {
     return (
       <section className="latest-blog-wrapper">
@@ -80,6 +95,7 @@ export default function LatestBlog() {
                 href={`/blog/${identifier}`}
                 key={blog._id}
                 className="latest-blog-card"
+                onClick={handleBlogClick}
               >
                 <div className="latest-blog-card-image">
                   <img src={imgSrc} alt={blog.altTag || blog.title} />
