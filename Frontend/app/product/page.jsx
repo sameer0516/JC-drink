@@ -175,7 +175,7 @@ const schemaData = [
         description:
             "Explore JC product collection including energy drinks, desi jeera, lemon, cola, and fruit-based beverages. Discover refreshing and affordable soft drinks.",
     },
-    // CollectionPage Schema (with aggregateRating + link to ItemList)
+    // CollectionPage Schema (link to ItemList)
     {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
@@ -191,13 +191,6 @@ const schemaData = [
             "@type": "Organization",
             name: "JC",
             url: `${SITE_URL}/`,
-        },
-        aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.6",
-            bestRating: "5",
-            worstRating: "1",
-            ratingCount: "210",
         },
         mainEntity: {
             "@id": `${PAGE_URL}#itemlist`,

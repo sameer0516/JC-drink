@@ -195,7 +195,7 @@ export default function BlogClient({ initialBlog, slug: serverSlug }) {
       <div className="Blog-line"></div>
       <div className="BlogDetail-wrapper">
         <div className="BlogDetail-hero">
-          <img src={imageSrc} alt={blog.altTag || blog.title} />
+          <img src={imageSrc} alt={blog.altTag || blog.title} width={1200} height={700} />
           <div className="BlogDetail-hero-overlay"></div>
         </div>
         <div className="BlogDetail-body">

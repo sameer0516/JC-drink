@@ -90,13 +90,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }}
           />
 
-          {/* Google Analytics - gtag.js load */}
+          {/* Google Analytics - gtag.js load (existing property) */}
           <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-LWVKCTJ6F5"
             strategy="afterInteractive"
           />
 
-          {/* Google Analytics - config */}
+          {/* Google Analytics - config (existing property) */}
           <Script
             id="gtag-config"
             strategy="afterInteractive"
@@ -106,6 +106,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', 'G-LWVKCTJ6F5');
+              `,
+            }}
+          />
+
+          {/* Google tag (gtag.js) - new property */}
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=G-P5XYDC5B4T"
+            strategy="afterInteractive"
+          />
+
+          <Script
+            id="gtag-config-2"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-P5XYDC5B4T');
               `,
             }}
           />

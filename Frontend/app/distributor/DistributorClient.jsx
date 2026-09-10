@@ -415,7 +415,7 @@ export default function Distributor() {
   return (
     <>
       <div className="distributor-page-banner">
-        <img src="/Distributor-banner.jpeg" alt="Just Drink Banner" />
+        <img src="/Distributor-banner.jpeg" alt="Just Drink Banner" width={1920} height={600} />
       </div>
 
       <div className="distributor-page">
@@ -425,7 +425,7 @@ export default function Distributor() {
           <section key={p.id} className={`product-hero ${p.bg || ''}`}>
             <div className={`product-container ${p.reverse ? 'reverse' : ''}`}>
               <div className="product-image-box">
-                <img src={`/${p.img}`} alt={p.title} className="floating-bottle" />
+                <img src={`/${p.img}`} alt={p.title} className="floating-bottle" width={400} height={800} />
               </div>
               <div className="product-info">
                 <h2 className="gold-title">{p.title}</h2>

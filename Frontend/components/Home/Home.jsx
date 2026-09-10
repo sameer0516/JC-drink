@@ -1,7 +1,7 @@
 import Script from "next/script";
 import Header from "./Header/Header";
 import Main from "./Main/Main";
-import ContactSection from "./ContactSection/ContactSection";
+import Contact from "../../app/contact/page";
 import Energizing from "./Energizing/Energizing";
 import OurExpertise from "./OurExpertise/OurExpertise";
 import NFTMarketplace from "./NFTMarketplace/NFTMarketplace";
@@ -407,7 +407,7 @@ export default function Home() {
             <FeatureBadges />
             <Testimonials />
             <LatestBlog />
-            <ContactSection />
+            <Contact />
             <FAQS />
         </>
     );

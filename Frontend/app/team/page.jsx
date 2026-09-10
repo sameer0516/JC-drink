@@ -6,7 +6,7 @@ const SITE_URL = "https://jcdrink.com";
 const PAGE_URL = "https://jcdrink.com/team";
 const OG_IMAGE = "/Just-Drink-Banner.jpg";
 const TITLE = "JC Drink Team | Meet Our Experts & Leadership";
-const DESCRIPTION ="Meet the JC Drink team driving innovation in the beverage industry. Learn about our leadership, expertise, and commitment to growth.";
+const DESCRIPTION = "Meet the JC Drink team driving innovation in the beverage industry. Learn about our leadership, expertise, and commitment to growth.";
 
 export const metadata = {
     title: TITLE,
@@ -162,13 +162,15 @@ export default function Team() {
                                 Meet The Minds Behind Our Innovation And Success.
                             </p>
                         </div>
-                        
+
                         <div data-aos="fade-zoom-in" className="ceo-section">
                             <div className="ceo-image-container">
                                 <img
                                     src="/Screenshot-2025.png"
                                     alt="Rajeyssh Saddhwani - CEO & Founder"
                                     className="ceo-image"
+                                    width={400}
+                                    height={600}
                                 />
                             </div>
                             <div className="ceo-content">
@@ -219,6 +221,8 @@ export default function Team() {
                                                     src={member.image}
                                                     alt={member.name}
                                                     className="team-image"
+                                                    width={320}
+                                                    height={320}
                                                 />
                                             </div>
                                             <div className="team-info">
@@ -241,6 +245,8 @@ export default function Team() {
                                                     src={member.image}
                                                     alt={member.name}
                                                     className="team-image"
+                                                    width={320}
+                                                    height={320}
                                                 />
                                             </div>
                                             <div className="team-info">

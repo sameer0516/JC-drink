@@ -66,6 +66,8 @@ export default function BestSelling() {
                                         src={product.img}
                                         alt={product.name}
                                         className="product-img"
+                                        width={280}
+                                        height={280}
                                     />
                                 </div>
 

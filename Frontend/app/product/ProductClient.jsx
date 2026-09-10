@@ -671,9 +671,9 @@ export default function ProductClient() {
       <div className={styles.productContainer}>
         <div className={styles.productContainerContent}>
           <h1 className={styles.aboutHeading}>Our Products</h1>
-          <div className={styles.productContainerContentDes}>
+          <h2 className={styles.productContainerContentDes}>
             Browse our collection of amazing products.
-          </div>
+          </h2>
         </div>
 
         <div className={styles.productsContainer}>
@@ -743,6 +743,8 @@ export default function ProductClient() {
                           src={getImageUrl(product.image)}
                           alt={product.title || "Product"}
                           className={styles.productImage}
+                          width={300}
+                          height={320}
                           onError={(e) => {
                             e.target.src =
                               "https://via.placeholder.com/300x300?text=Image+Error";

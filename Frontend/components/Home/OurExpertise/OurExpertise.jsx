@@ -36,8 +36,9 @@ export default function OurExpertise() {
                     <Image
                       src="/Main-Banner-3.webp"
                       alt="Team working"
-                      fill
-                      style={{ objectFit: "cover" }}
+                      width={512}
+                      height={768}
+                      style={{ width: "100%", height: "auto", objectFit: "cover" }}
                       sizes="(max-width: 768px) 100vw, 40vw"
                     />
                   </div>

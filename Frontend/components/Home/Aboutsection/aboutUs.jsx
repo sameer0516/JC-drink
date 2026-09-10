@@ -14,6 +14,8 @@ const AboutUs = () => {
                             src="/New-About-us.png"
                             alt="About Us"
                             className="au-about-image"
+                            width={600}
+                            height={460}
                         />
                     </div>
 

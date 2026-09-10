@@ -28,12 +28,13 @@ export default function NFTMarketplace() {
           id="NFTMarketplace"
         >
           <div className="Refreshing-content">
-            <div style={{ position: "relative", width: "100%", aspectRatio: "16/9" }}>
+            <div style={{ position: "relative", width: "100%" }}>
               <Image
                 src="/Refreshing.webp"
                 alt="Refreshing JC Drink"
-                fill
-                style={{ objectFit: "contain" }}
+                width={2616}
+                height={1648}
+                style={{ width: "100%", height: "auto", objectFit: "contain" }}
                 priority
               />
             </div>

@@ -13,7 +13,7 @@ export default function Footer() {
                         <div className={styles.footerSection}>
                             <div className={styles.logo}>
                                 <div className={styles.logoContainer}>
-                                    <img src="/jcDrink-logo.jpg" alt="Company Logo" />
+                                    <img src="/jcDrink-logo.jpg" alt="Company Logo" width={150} height={150} />
                                 </div>
                                 <p>SHREE BALAJI FOODS</p>
                             </div>

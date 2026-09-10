@@ -238,8 +238,6 @@ export const blogs = [
   `,
   },
 
-
-
   {
     slug: "soft-drink-distributorship-india",
     title: "How to Start Soft Drink Distributorship in India (Complete Guide)",
@@ -570,7 +568,6 @@ export const blogs = [
       <h3>10. How do I get soft drink distributorship in India?</h3>
       <p>You can apply directly through beverage companies like JC Drink by submitting your business details and investment information.</p>`,
   },
-
 
   {
     slug: "drinks-wholesale-supplier-business-india",
@@ -1029,6 +1026,7 @@ export const blogs = [
       <h3>11. How can I get a cold drink dealership in India?</h3>
       <p>You can apply directly through beverage brands' websites, submit required documents, and complete the onboarding process to start your dealership.</p>`,
   },
+
   {
     slug: "soft-drink-distributor-india-guide",
     title: "How to Become a Soft Drink Distributor in India",
@@ -1486,6 +1484,7 @@ export const blogs = [
       </ul>
       <p>Consistent service, timely delivery, and competitive pricing are key factors for long-term growth.</p>`
   },
+
   {
     slug: "best-energy-drink-india",
     title: "How to Pick the Best Energy Drink for Your Needs (2026)",
@@ -1771,6 +1770,7 @@ export const blogs = [
       <h3>12. How long does an energy drink last?</h3>
       <p>Most energy drinks provide effects for 3 to 5 hours, depending on caffeine content and individual tolerance.</p>`
   },
+
   {
     slug: "buy-soft-drinks-online-india",
     title: "How to Buy Soft Drinks Online in India (Guide 2026)",
@@ -1954,6 +1954,7 @@ export const blogs = [
       <h3>10. Which is the best website to buy soft drinks online?</h3>
       <p>Choose a reliable platform that offers quality products and transparent information, such as <a href="https://jcdrink.com/product" target="_blank" rel="noopener noreferrer">JC Drink</a>.</p>`
   },
+
   {
     slug: "best-cold-drinks-for-summer-india",
     title: "Best Cold Drinks to Enjoy During Hot Indian Summers",
@@ -2043,6 +2044,7 @@ What makes CLEAR LEMON stand out is its crisp and clean lemon taste that feels l
       <h3>10. How many glasses of fluids should I drink in summer?</h3>
       <p>At least 8–10 glasses, or more depending on your activity level.</p>`
   },
+
   {
     slug: "traditional-desi-drinks-india",
     title: "What Are Desi Drinks? Traditional Indian Drinks Indians Love",
@@ -2179,3 +2181,4 @@ What makes CLEAR LEMON stand out is its crisp and clean lemon taste that feels l
       <p>You can buy authentic desi drinks from <a href="https://jcdrink.com" target="_blank" rel="noopener noreferrer">jcdrink.com</a></p>`
   },
 ];
+

@@ -21,6 +21,8 @@ export default function Nutrition() {
                                 <img
                                     src="/Main-Banner-1.webp"
                                     alt="Citrus Blast Energy Drink"
+                                    width={600}
+                                    height={600}
                                 />
                                 <div className="floating-elements">
                                     <div className="floating-dot dot-1"></div>

@@ -1,4 +1,4 @@
-// NO "use client" here — server component
+
 import Script from "next/script";
 import BlogListPage from "./BlogListPage";
 
@@ -86,17 +86,6 @@ const schemaData = [
       },
     ],
   },
-  // TODO: agar individual blog posts ke liye alag schema chahiye (jaise BlogPosting
-  // type, har post ke apne slug/page pe), to yeh us blog post ke [slug]/page.js me
-  // add karna, is listing page me nahi. Example:
-  // {
-  //   "@context": "https://schema.org",
-  //   "@type": "BlogPosting",
-  //   headline: "Post Title",
-  //   image: `${SITE_URL}/post-image.jpg`,
-  //   datePublished: "2026-01-01",
-  //   author: { "@type": "Organization", name: "JC Drink" },
-  // },
 ];
 
 export default function Page() {

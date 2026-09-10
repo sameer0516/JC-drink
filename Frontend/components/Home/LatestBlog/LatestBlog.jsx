@@ -98,7 +98,7 @@ export default function LatestBlog() {
                 onClick={handleBlogClick}
               >
                 <div className="latest-blog-card-image">
-                  <img src={imgSrc} alt={blog.altTag || blog.title} />
+                  <img src={imgSrc} alt={blog.altTag || blog.title} width={430} height={250} />
                 </div>
                 <div className="latest-blog-card-body">
                   <div className="latest-blog-card-meta">

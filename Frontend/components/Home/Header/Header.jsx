@@ -75,11 +75,19 @@ export default function Header() {
                 <Image
                   src={imageSrc}
                   alt={`Slide ${index + 1}`}
-                  fill
+                  width={1506}
+                  height={2560}
                   priority={index === 0}
                   sizes="100vw"
                   className="Header-slide-image"
-                  style={{ objectFit: "cover" }}
+                  style={{
+                    objectFit: "cover",
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                  }}
                 />
 
                 <div className="Header-slide-overlay" />

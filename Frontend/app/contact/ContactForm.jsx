@@ -114,7 +114,7 @@ export default function ContactForm() {
                         <div className="cf-contact-grid">
 
                             <div data-aos="fade-right" className="cf-contact-form-section">
-                                <h1 className="cf-form-title">Contact Us – Start Your Business with JC Drink</h1>
+                                <h2 className="cf-form-title">Contact Us – Start Your Cold Drink Business with JC </h2>
                                 <p className="cf-form-subtitle">
                                     We'll get back to you within one business day.
                                 </p>

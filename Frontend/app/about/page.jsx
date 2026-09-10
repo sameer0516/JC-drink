@@ -115,7 +115,7 @@ export default function About() {
                     <div className="about-main-section">
                         <div className="about-text-container">
                             <div className="about-text-content">
-                                <h3 className="about-title">About Us</h3>
+                                <h2 className="about-title">About Us</h2>
                                 <p className="about-paragraph">
                                     Founded in 2012, <strong>Shree Balaji Foods</strong> is a growing name in the Indian beverage industry,
                                     dedicated to crafting refreshing and affordable drinks tailored to Indian tastes. With a vision
@@ -247,7 +247,7 @@ export default function About() {
                         ].map((drink) => (
                             <div key={drink.title} className="drink-card">
                                 <div className="drink-image-wrapper">
-                                    <img src={drink.src} alt={drink.alt} />
+                                    <img src={drink.src} alt={drink.alt} width={800} height={600} />
                                     <div className="drink-overlay">
                                         <div className="drink-overlay-content">
                                             <h3>{drink.title}</h3>

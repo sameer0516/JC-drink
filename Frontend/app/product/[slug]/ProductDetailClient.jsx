@@ -16,7 +16,7 @@ export default function ProductDetailClient({ slug, initialProduct, accordionDat
   const [error, setError] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [selectedTab, setSelectedTab] = useState("description");
-  
+
   const [selectedSize, setSelectedSize] = useState(
     () => initialProduct?.priceVariations?.[0]?.size ?? ""
   );
@@ -34,16 +34,16 @@ export default function ProductDetailClient({ slug, initialProduct, accordionDat
       .replace(/\\/g, "/")
       .replace(/^\/+/, "")}`;
   };
-  
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [slug]);
-  
+
   useEffect(() => {
     if (initialProduct) {
-      
+
       if (initialProduct.slug !== slug) {
-        
+
         clientFetch();
       }
       return;
@@ -121,7 +121,7 @@ export default function ProductDetailClient({ slug, initialProduct, accordionDat
               onClick={() => router.push("/product")}
               className="back-btn"
             >
-              Back to Products  
+              Back to Products
             </button>
           </div>
         </div>
@@ -142,6 +142,8 @@ export default function ProductDetailClient({ slug, initialProduct, accordionDat
               src={getImageUrl(product.image)}
               alt={product.title || "Product"}
               className="product-image"
+              width={500}
+              height={700}
               onError={(e) => {
                 e.target.src =
                   "https://via.placeholder.com/500x500?text=Image+Error";
@@ -225,8 +227,7 @@ export default function ProductDetailClient({ slug, initialProduct, accordionDat
                 className="add-to-cart-button"
                 onClick={() =>
                   alert(
-                    `${quantity} × ${product.title}${
-                      selectedSize ? ` (${selectedSize})` : ""
+                    `${quantity} × ${product.title}${selectedSize ? ` (${selectedSize})` : ""
                     } added to cart!`
                   )
                 }
@@ -272,9 +273,9 @@ export default function ProductDetailClient({ slug, initialProduct, accordionDat
               {/* Description Tab */}
               {selectedTab === "description" && (
                 <div id="Product-Details">
-                  <h3 style={{ fontSize: "22px", marginBottom: "15px", color: "#1a202c" }}>
+                  <h2 style={{ fontSize: "22px", marginBottom: "15px", color: "#1a202c" }}>
                     Product Description
-                  </h3>
+                  </h2>
                   <p>
                     {product.description ||
                       "A drink that needs no introduction. This product has been part of shared experiences for decades."}

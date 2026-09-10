@@ -85,7 +85,7 @@ export default function BlogListPage({ initialBlogs = [] }) {
                       >
                         <div className="Blog-Section">
                           <div className="blog-img-wrapper">
-                            <img src={imageSrc} alt={blog.altTag || blog.title} />
+                            <img src={imageSrc} alt={blog.altTag || blog.title} width={400} height={275} />
                           </div>
                           <div className="blog-content">
                             <div className="blog-meta">
